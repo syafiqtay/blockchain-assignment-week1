@@ -10,7 +10,7 @@ const cors = require("cors");
  * @setHostAt "0.0.0.0" instead or localhost
  */
 const HOST = "0.0.0.0";
-const PORT = 8485;
+const PORT = 9944;
 
 const app = express();
 app.use(express.json())
