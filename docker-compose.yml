@@ -1,0 +1,30 @@
+version: '3.8'
+services:
+  week1:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: week1
+    ports:
+      - "9944:9944"
+    depends_on:
+      - mongo
+    networks:
+      - fabricnet
+  mongo:
+    image: mongo
+    ports: 
+      - "27017:27017"
+    container_name: mongo 
+    volumes:
+        - ./mongodb:/data
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME:simpleserver
+      - MONGO_INITDB_ROOT_PASSWORD:serverapi123
+      - MONGODB_mongo
+    networks:
+      - fabricnet
+networks:
+  fabricnet:
+    external: false
+    name: fabricnet

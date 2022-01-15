@@ -14,4 +14,4 @@ COPY . .
 
 CMD ["npm", "start"]
 
-RUN  apt-get update && apt-get install iputils-ping dnsutils -y
+# RUN  apt-get update && apt-get install iputils-ping dnsutils -y
